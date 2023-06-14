@@ -1,24 +1,29 @@
-import time
-from selenium import webdriver
-from selenium.common.exceptions import StaleElementReferenceException
-from selenium.common.exceptions import NoSuchElementException
-from selenium.webdriver.common.by import By
-from webdriver_manager.chrome import ChromeDriverManager
-import chromedriver_binary
 import csv
 import os
+import time
 
-driver = webdriver.Chrome(ChromeDriverManager().install())
+from selenium import webdriver
+from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import StaleElementReferenceException
+from selenium.webdriver.common.by import By
+# from webdriver_manager.chrome import ChromeDriverManager
+
+# driver = webdriver.Chrome(ChromeDriverManager().install())
+driver = webdriver.Chrome()
+
 yahoo_news_total_comments = []
 yahoo_news_page_comments = []
 page = 1
 
-URL = "https://news.yahoo.co.jp/articles/1fc57bba01d74ad314a332858cbf76c4ba745522/comments"
-folder_name = '2023_05_24'
-csv_file_name = '20230524_1.csv'
+URL = "https://news.yahoo.co.jp/articles/878360dc0a31e409bec1febc5c31c1a9dd0713e2/comments"
+folder_name = '2023_06_14'
+csv_file_name = '20230614_1.csv'
 
-folder_path = 'C:/Users/tatsuki/Desktop/program/TechnicalInvestigation/Data/yahoo/' + folder_name
-csv_file_path = 'C:/Users/tatsuki/Desktop/program/TechnicalInvestigation/Data/yahoo/' + folder_name + '/' + csv_file_name
+# folder_path = 'C:/Users/tatsuki/Desktop/program/TechnicalInvestigation/Data/yahoo/' + folder_name
+folder_path = 'CSV/' + folder_name
+# csv_file_path = 'C:/Users/tatsuki/Desktop/program/TechnicalInvestigation/Data/yahoo/' + folder_name + '/' + csv_file_name
+csv_file_path = 'CSV/' + folder_name + '/' + csv_file_name
+
 
 # 1ページ以外でのURL
 if not page == 1:
