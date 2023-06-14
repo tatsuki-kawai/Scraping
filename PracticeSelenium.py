@@ -20,7 +20,6 @@ csv_file_name = '20230524_1.csv'
 folder_path = 'C:/Users/tatsuki/Desktop/program/TechnicalInvestigation/Data/yahoo/' + folder_name
 csv_file_path = 'C:/Users/tatsuki/Desktop/program/TechnicalInvestigation/Data/yahoo/' + folder_name + '/' + csv_file_name
 
-#eeeeee
 # 1ページ以外でのURL
 if not page == 1:
     URL = URL + "?page={}".format(page)
